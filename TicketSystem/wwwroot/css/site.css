@@ -1,0 +1,51 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+filtros {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    text-align: center;
+    background-color: #F6E3CA;
+    border: #D7C8B6 2px solid;
+    display: inline;
+    margin-right: 10px;
+    color: black;
+    padding: 0 4px;
+    text-decoration: none;
+}
+
+filtros-lista {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    text-align: center;
+    background-color: #F6E3CA;
+    border: #D7C8B6 2px solid;
+    display: inline;
+    margin-right: 10px;
+    color: black;
+    padding: 0 4px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: white;
+    color: #D7C8B6;
+}

@@ -1,0 +1,50 @@
+﻿@model TicketSystem.Models.Ticket
+
+@{
+    ViewData["Title"] = "Borrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>¿Estás seguro que deseas eliminar el ticket @Html.DisplayFor(model => model.Titulo)?</h1>
+
+<hr />
+
+<div class="row">
+
+    <div class="row">
+
+        <div class="col-4">
+            @Html.DisplayFor(model => model.EncargadoNombre) @Html.DisplayFor(model => model.EncargadoApellido1) @Html.DisplayFor(model => model.EncargadoApellido2)
+        </div>
+
+        <div class="col-8">
+            @Html.DisplayFor(model => model.Estatus)
+        </div>
+
+    </div>
+
+    <br />
+
+    <div class="row">
+        
+        <div class="col-4">
+            @Html.DisplayFor(model => model.EncargadoCorreo)
+        </div>
+
+        <div class="col-8">    
+            @Html.DisplayFor(model => model.Descripcion)
+        </div>
+
+    </div>
+
+</div>
+
+<br />
+
+<form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Borrar" class="btn btn-outline-danger" /> 
+        <a class="btn btn-outline-dark" asp-action="Index">Regresar</a>
+</form>
+
+

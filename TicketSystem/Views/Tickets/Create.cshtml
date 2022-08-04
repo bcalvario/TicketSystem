@@ -1,0 +1,89 @@
+﻿@model TicketSystem.Models.Ticket
+
+@{
+    ViewData["Title"] = "Crear ticket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear Ticket</h1>
+
+
+<hr />
+
+<div class="row">
+    
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            
+            <div class="row">
+
+                <div class="col-4">
+                <label asp-for="Titulo" class="control-label">Título</label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+
+                <div class="col-8">
+                    <label asp-for="Descripcion" class="control-label">Descripción</label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+                
+            </div> 
+
+            <br />
+
+            <div class="row">
+
+                <div class="col">
+                    <label asp-for="EncargadoNombre" class="control-label">Nombre</label>
+                    <input asp-for="EncargadoNombre" class="form-control" />
+                    <span asp-validation-for="EncargadoNombre" class="text-danger"></span>
+                </div>
+
+                <div class="col">
+                    <label asp-for="EncargadoApellido1" class="control-label">Primer apellido</label>
+                    <input asp-for="EncargadoApellido1" class="form-control" />
+                    <span asp-validation-for="EncargadoApellido1" class="text-danger"></span>
+                </div>
+
+                <div class="col">
+                    <label asp-for="EncargadoApellido2" class="control-label">Segundo apellido</label>
+                    <input asp-for="EncargadoApellido2" class="form-control" />
+                    <span asp-validation-for="EncargadoApellido2" class="text-danger"></span>
+                </div>
+
+            </div>
+             
+            <br />
+            
+            <div class="row">
+
+                <div class="col">
+                    <label asp-for="EncargadoCorreo" class="control-label">Correo</label>
+                    <input asp-for="EncargadoCorreo" class="form-control" />
+                    <span asp-validation-for="EncargadoCorreo" class="text-danger"></span>
+                </div>
+
+                <div class="col">
+                    <label asp-for="Estatus" class="control-label">Estatus (En progreso, Resuelto, Necesita reembolso o Abierto)</label>
+                    <input asp-for="Estatus" class="form-control" />
+                    <span asp-validation-for="Estatus" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <br />
+            
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-outline-success" /> 
+                <a class="btn btn-outline-dark" asp-action="Index">Regresar</a>
+            </div>
+
+        </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
